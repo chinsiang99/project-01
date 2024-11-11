@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import Message from './Message'
+import { UserContext } from './UserContext'
 
 const App: React.FC = () => {
   const [username, setUsername] = useState<string>('testing username')
@@ -18,7 +19,7 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <>
+    <UserContext.Provider value={{name: username, message: message}}>
       <div className='flex flex-col items-center justify-center h-screen'>
         <div className='p-3 bg-green-400 rounded-xl shadow-2xl'>
           <p className='text-white font-bold underline underline-offset-4 tracking-wider'>
@@ -28,9 +29,9 @@ const App: React.FC = () => {
       </div>
       <div>
         hello
-        <Message name={username} message={message}/>
+        <Message/>
       </div>
-    </>
+    </UserContext.Provider>
   )
 }
 
