@@ -1,10 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import Message from './Message'
 
 const App: React.FC = () => {
   const [username, setUsername] = useState<string>('testing username')
   const [message, setMessage] = useState<string>('user message')
+
+  useEffect(()=>{
+    const timer = setTimeout(()=>{
+      // update message
+      setMessage("updated message")
+      // update username
+      setUsername("updated username")
+    }, 5000)
+
+    return clearTimeout(timer)
+  }, [])
 
   return (
     <>
