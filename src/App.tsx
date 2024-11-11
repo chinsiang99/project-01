@@ -1,4 +1,5 @@
 import './App.css'
+import Message from './Message'
 
 function App() {
   return (
@@ -9,6 +10,10 @@ function App() {
             TailwindCSS being applied here
           </p>
         </div>
+      </div>
+      <div>
+        hello
+        <Message name='testing name' message='this is a cool message'/>
       </div>
     </>
   )
