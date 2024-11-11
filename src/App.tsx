@@ -1,7 +1,11 @@
+import React, { useState } from 'react'
 import './App.css'
 import Message from './Message'
 
-function App() {
+const App: React.FC = () => {
+  const [username, setUsername] = useState<string>('testing username')
+  const [message, setMessage] = useState<string>('user message')
+
   return (
     <>
       <div className='flex flex-col items-center justify-center h-screen'>
@@ -13,7 +17,7 @@ function App() {
       </div>
       <div>
         hello
-        <Message name='testing name' message='this is a cool message'/>
+        <Message name={username} message={message}/>
       </div>
     </>
   )
