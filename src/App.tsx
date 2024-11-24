@@ -15,7 +15,7 @@ const App: React.FC = () => {
       setUsername("updated username")
     }, 5000)
 
-    return clearTimeout(timer)
+    return () => clearTimeout(timer)
   }, [])
 
   return (
@@ -28,7 +28,6 @@ const App: React.FC = () => {
         </div>
       </div>
       <div>
-        hello
         <Message/>
       </div>
     </UserContext.Provider>
